@@ -6,7 +6,7 @@ public class Emprestimo {
     private Pessoa pessoa;
     private ItemBiblioteca item;
     private LocalDate dataEmprestimo;
-    private  boolean ativo;
+    private boolean ativo;
 
     public Emprestimo(Pessoa pessoa, ItemBiblioteca item) {
         this.pessoa = pessoa;
@@ -36,9 +36,10 @@ public class Emprestimo {
     public void finalizarEmprestimo() {
         if (!ativo) {
             throw new IllegalStateException("Empréstimo já finalizado.");
+        } else {
+            ativo = false;
+            item.aumentarQuantidade();
+            pessoa.decrementarEmprestimos();
         }
-        ativo = false;
-        item.aumentarQuantidade();
-        pessoa.decrementarEmprestimos();
     }
 }

@@ -52,7 +52,7 @@ public class BibliotecaRepository {
         emprestimos.add(emprestimo);
     }
 
-    public List<Emprestimo> getEmprestimo() {
+    public List<Emprestimo> getEmprestimos() {
         return emprestimos;
     }
 }
