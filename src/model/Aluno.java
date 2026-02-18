@@ -2,7 +2,7 @@ package model;
 
 public class Aluno extends Pessoa {
 
-    public Aluno(String nome, String cpf, int quantidadeEmprestimosAtivos) {
+    public Aluno(String nome, int cpf, int quantidadeEmprestimosAtivos) {
         super(nome, cpf, quantidadeEmprestimosAtivos);
     }
 

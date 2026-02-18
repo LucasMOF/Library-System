@@ -16,7 +16,7 @@ public class BibliotecaService {
         this.repository = repository;
     }
 
-    public void realizarEmprestimo(String cpf, int codigoItem) {
+    public void realizarEmprestimo(int cpf, int codigoItem) {
         Pessoa pessoa = repository.buscarPessoaPorCpf(cpf)
                 .orElseThrow(() -> new PessoaNaoEncontradoException("Pessoa não encontrada"));
 
@@ -34,12 +34,12 @@ public class BibliotecaService {
         repository.adicionarEmprestimo(emprestimo);
     }
 
-    public void finalizarEmprestimo(String cpf, int codigoItem) {
+    public void finalizarEmprestimo(int cpf, int codigoItem) {
         Pessoa pessoa = repository.buscarPessoaPorCpf(cpf)
                 .orElseThrow(() -> new PessoaNaoEncontradoException("Pessoa não encontrada"));
 
         Emprestimo emprestimo = repository.getEmprestimos().stream()
-                .filter(e -> e.getPessoa().getCpf().equals(cpf))
+                .filter(e -> e.getPessoa().getCpf() == cpf)
                 .filter(e -> e.getItem().getCodigo() == codigoItem)
                 .filter(Emprestimo::isAtivo)
                 .findFirst()
@@ -70,7 +70,7 @@ public class BibliotecaService {
                 .toList();
     }
 
-    public Pessoa buscarPessoa(String cpf) {
+    public Pessoa buscarPessoa(int cpf) {
         return repository.buscarPessoaPorCpf(cpf)
                 .orElseThrow(() -> new PessoaNaoEncontradoException("Pessoa não encontrada"));
     }

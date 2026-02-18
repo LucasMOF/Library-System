@@ -2,10 +2,10 @@ package model;
 
 public abstract class Pessoa {
     private String nome;
-    private String cpf;
+    private int cpf;
     private int quantidadeEmprestimosAtivos;
 
-    public Pessoa(String nome, String cpf, int quantidadeEmprestimosAtivos) {
+    public Pessoa(String nome, int cpf, int quantidadeEmprestimosAtivos) {
         this.cpf = cpf;
         this.nome = nome;
         this.quantidadeEmprestimosAtivos = quantidadeEmprestimosAtivos;
@@ -19,11 +19,11 @@ public abstract class Pessoa {
         this.nome = nome;
     }
 
-    public String getCpf() {
+    public int getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    public void setCpf(int cpf) {
         this.cpf = cpf;
     }
 

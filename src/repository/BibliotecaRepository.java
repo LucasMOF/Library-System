@@ -24,9 +24,9 @@ public class BibliotecaRepository {
         pessoas.add(pessoa);
     }
 
-    public Optional<Pessoa> buscarPessoaPorCpf(String cpf) {
+    public Optional<Pessoa> buscarPessoaPorCpf(int cpf) {
         return pessoas.stream()
-                .filter(p -> p.getCpf().equals(cpf))
+                .filter(p -> p.getCpf() == cpf)
                 .findFirst();
     }
 
