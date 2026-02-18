@@ -1,0 +1,50 @@
+Library System
+
+Sistema de gerenciamento de biblioteca desenvolvido em Java, com foco na aplicação de Programação Orientada a Objetos (POO), arquitetura em camadas e boas práticas de desenvolvimento backend.
+
+Funcionalidades:
+
+-Cadastro de Aluno e Professor
+-Cadastro de Livros
+-Realização de empréstimos
+-Finalização de empréstimos
+-Controle de limite de empréstimos por tipo de pessoa
+-Controle de disponibilidade de livros
+-Listagem de livros disponíveis
+-Listagem de livros emprestados
+-Busca de livro por título
+-Ordenação de livros por título
+-Total de empréstimos realizados e ativos
+
+Arquitetura:
+O projeto está organizado em camadas:
+
+src/
+-model: entidades do sistema (Pessoa, Aluno, Professor, ItemBiblioteca, Livro, Emprestimo)
+-repository: armazenamento em memória utilizando List
+-service: regras de negócio
+-exception: exceções personalizadas
+-Main: interface via console
+
+Conceitos Aplicados:
+
+-Programação Orientada a Objetos
+-Herança e Polimorfismo
+-Encapsulamento
+-Collections (List)
+-Stream API
+-Tratamento de Exceções
+-Arquitetura em Camadas
+
+Como Executar;
+1. Clonar o repositório
+2. Abrir o projeto em uma IDE Java
+3. Executar a classe Main
+
+Objetivo:
+Projeto desenvolvido para consolidar fundamentos de Java e simular um sistema real, servindo como base para evolução futura para uma API REST com Spring Boot.
+
+Autor:
+Lucas Moura
+Estudante de Sistemas de Informação
+Foco em desenvolvimento backend Java
