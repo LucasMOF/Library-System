@@ -1,4 +1,8 @@
 package exception;
 
-public class LivroIndisponivelException {
+public class LivroIndisponivelException extends RuntimeException {
+
+    public LivroIndisponivelException(String mensagem) {
+        super(mensagem);
+    }
 }
