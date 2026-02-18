@@ -131,12 +131,12 @@ public class Main {
                     break;
 
                 case 5:
-                    List<ItemBiblioteca> lista = service.listarItensDisponiveis();
-                    if (lista.isEmpty()) {
+                    List<ItemBiblioteca> itemsDisponiveis = service.listarItensDisponiveis();
+                    if (itemsDisponiveis.isEmpty()) {
                         System.out.println("Nenhum livro disponivel!");
 
                     } else {
-                        lista.forEach(item ->
+                        itemsDisponiveis.forEach(item ->
                                 System.out.println("Código: " + item.getCodigo() +
                                         " | Título: " + item.getTitulo() +
                                         " | Quantidade disponível: " + item.getQuantidadeDisponivel()));
@@ -144,12 +144,12 @@ public class Main {
                     break;
 
                 case 6:
-                    List<ItemBiblioteca> listaEmprestados = service.listarItensEmprestados();
-                    if (listaEmprestados.isEmpty()) {
+                    List<ItemBiblioteca> livrosEmprestados = service.listarItensEmprestados();
+                    if (livrosEmprestados.isEmpty()) {
                         System.out.println("Nenhum livro emprestado no momento!");
 
                     } else {
-                        listaEmprestados.forEach(emprestado ->
+                        livrosEmprestados.forEach(emprestado ->
                                 System.out.println("Código: " + emprestado.getCodigo() +
                                         " | Título: " + emprestado.getTitulo()));
                     }
@@ -159,27 +159,27 @@ public class Main {
                     System.out.println("Informe o titulo do livro que deseja buscar: ");
                     String titulo = scanner.nextLine();
 
-                    List<ItemBiblioteca> listagem = service.buscarLivroPorTitulo(titulo);
+                    List<ItemBiblioteca> buscarPorTitulo = service.buscarLivroPorTitulo(titulo);
 
-                    if (listagem.isEmpty()) {
+                    if (buscarPorTitulo.isEmpty()) {
                         System.out.println("Livro não encontrado!");
                     } else {
-                        listagem.forEach(l ->
-                                System.out.println("Código: " + l.getCodigo() +
-                                        " | Título: " + l.getTitulo() +
-                                        " | Quantidade dispnível: " + l.getQuantidadeDisponivel()));
+                        buscarPorTitulo.forEach(b ->
+                                System.out.println("Código: " + b.getCodigo() +
+                                        " | Título: " + b.getTitulo() +
+                                        " | Quantidade dispnível: " + b.getQuantidadeDisponivel()));
                     }
                     break;
 
                 case 8:
-                    List<ItemBiblioteca> listar = service.listarItensOrdenadosPorTitulo();
+                    List<ItemBiblioteca> livrosOrdenados = service.listarItensOrdenadosPorTitulo();
 
-                    if (listar.isEmpty()) {
+                    if (livrosOrdenados.isEmpty()) {
                         System.out.println("Não há nada para ordenar");
 
                     } else {
-                        listar.forEach(l -> System.out.println("Código: " + l.getCodigo() +
-                                " | Título: " + l.getTitulo()));
+                        livrosOrdenados.forEach(ordem -> System.out.println("Código: " + ordem.getCodigo() +
+                                " | Título: " + ordem.getTitulo()));
                     }
                     break;
 
@@ -201,5 +201,6 @@ public class Main {
 
             }
         }
+        scanner.close();
     }
 }

@@ -63,18 +63,6 @@ public class BibliotecaService {
                 .toList();
     }
 
-    public List<Emprestimo> listarEmprestimosAtivos() {
-        return repository.getEmprestimos()
-                .stream()
-                .filter(Emprestimo::isAtivo)
-                .toList();
-    }
-
-    public Pessoa buscarPessoa(int cpf) {
-        return repository.buscarPessoaPorCpf(cpf)
-                .orElseThrow(() -> new PessoaNaoEncontradoException("Pessoa não encontrada"));
-    }
-
     public List<ItemBiblioteca> listarItensEmprestados() {
         return repository.getEmprestimos()
                 .stream()
@@ -108,6 +96,4 @@ public class BibliotecaService {
                 .filter(Emprestimo::isAtivo)
                 .count();
     }
-
-
 }

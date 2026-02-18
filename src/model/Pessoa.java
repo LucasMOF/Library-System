@@ -35,10 +35,6 @@ public abstract class Pessoa {
         this.quantidadeEmprestimosAtivos = quantidadeEmprestimosAtivos;
     }
 
-    public void exibirdados() {
-        System.out.println("Nome: " + this.nome + " | CPF: " + this.cpf);
-    }
-
     public abstract int getLimiteDeEmprestimos();
 
     public boolean podeEmprestar() {
